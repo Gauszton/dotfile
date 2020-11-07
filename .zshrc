@@ -1,3 +1,4 @@
+#Gauszton_ZSH_V_1
 export ZSH="/home/m/.oh-my-zsh"
 ZSH_THEME="common"
 DISABLE_MAGIC_FUNCTIONS="true"
