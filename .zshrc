@@ -1,4 +1,4 @@
-#Gauszton_ZSH_V_1
+#Gauszton_ZSH_V_1_1
 export ZSH="/home/m/.oh-my-zsh"
 ZSH_THEME="common"
 DISABLE_MAGIC_FUNCTIONS="true"
@@ -18,3 +18,16 @@ alias httprobe="/home/m/go/bin/httprobe"
 alias photon="python3 /home/m/tools/Photon/photon.py"
 alias gobuster="/home/m/go/bin/gobuster"
 alias kxss="/home/m/go/bin/kxss"
+
+speedtest() {
+    curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python3 -
+}
+
+ipgeo() {
+    # Specify ip or your ip will be used
+    if [ "$1" ]; then
+        curl "http://api.db-ip.com/v2/free/$1"
+    else
+        curl "http://api.db-ip.com/v2/free/$(myip)"
+    fi
+}
