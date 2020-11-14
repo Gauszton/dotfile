@@ -32,10 +32,11 @@ ipgeo() {
     fi
 }
 
-whoisipbgp() {
+bgp01() {
     whois -h bgp.tools " -v $1"; 
     }
 
-multibgp(){
-    nc bgp.tools 43 < $1
+bgp02(){
+    echo "$1" | nc bgp.tools 43
 }
+#https://bgp.tools/kb/api
