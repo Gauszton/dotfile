@@ -1,11 +1,15 @@
-#Gauszton_ZSH_V_1_2
+#Gauszton_ZSH_V_1_3
+
 export ZSH="/home/m/.oh-my-zsh"
 ZSH_THEME="common"
 DISABLE_MAGIC_FUNCTIONS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 plugins=(docker zsh-completions sudo web-search zsh-autosuggestions autojump zsh-syntax-highlighting dnf npm)
+
 source $ZSH/oh-my-zsh.sh
+
 ZSH_AUTOSUGGEST_MANUAL_REBIND=1
+
 alias myip="curl http://ipecho.net/plain; echo"
 alias hydrarecon="python3 /home/m/tools/HydraRecon/hydrarecon.py"
 alias knock="python2 /home/m/tools/knock/knockpy/knockpy.py"
@@ -24,7 +28,7 @@ speedtest() {
     curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python3 -
 }
 
-ipgeo() {
+geoip() {
     if [ "$1" ]; then
         curl "http://api.db-ip.com/v2/free/$1"
     else
@@ -32,22 +36,8 @@ ipgeo() {
     fi
 }
 
-bgp01() {
-    whois -h bgp.tools " -v $1"; 
-    }
 
-bgp02(){
-    echo "$1" | nc bgp.tools 43
-}
-#https://bgp.tools/kb/api
-
-webscreenshot() {
+#webscreenshot() {
     #$1 to plik z http, $2 miejsce do zapisu danych 
-    python3 ~/tools/webscreenshot/webscreenshot.py --no-xserver --renderer-binary /usr/bin/phantomjs -r phantomjs -i $1 -p 443 -o $2
-}
-
-
-
-#ODO:
-#6fotekmoje
-#https://github.com/nahamsec/recon_profile/blob/master/.bash_profile
+    #python3 ~/tools/webscreenshot/webscreenshot.py --no-xserver --renderer-binary /usr/bin/phantomjs -r phantomjs -i $1 -p 443 -o $2
+#}
